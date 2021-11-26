@@ -19,9 +19,7 @@ export default new Vuex.Store({
       state.tasks.splice(taskId, 1)
     },
     renumberTask(state) {
-      for(let i = 0; i < state.tasks.length; i++) {
-        state.tasks[i].id = i
-      }
+      state.tasks.forEach((task, index) => task.id = index)
     },
     changeStatus(state, taskId) {
       if (state.tasks[taskId].status === '作業中') {
